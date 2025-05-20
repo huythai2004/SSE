@@ -18,7 +18,7 @@ public class Main extends AbstractVerticle {
             response.setChunked(true);
 
             //Send data every second
-            long timeId = vertx.setPeriodic(1000, id -> {
+            long timeId = vertx.setPeriodic(3000, id -> {
                 String msg = "data: {\"testing\": true, \"sse_dev\": \"It's great\", \"now\": " + System.currentTimeMillis() + "}\n\n";
                 if(ctx.failed()){
                     System.out.println("Failed to send message!!");
