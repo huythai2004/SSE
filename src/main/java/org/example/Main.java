@@ -10,7 +10,7 @@ public class Main extends AbstractVerticle {
     @Override
     public void start(){
         Router router = Router.router(vertx);
-        router.route("/").handler(StaticHandler.create().setCachingEnabled(false).setWebRoot("webroot"));
+        router.route("/").handler(StaticHandler.create("webroot").setCachingEnabled(false));
         router.get("/sse").handler(ctx ->{
             HttpServerResponse response = ctx.response();
             response.putHeader("Content-Type", "text/event-stream");
@@ -18,10 +18,10 @@ public class Main extends AbstractVerticle {
             response.setChunked(true);
 
             //Send data every second
-            long timeId = vertx.setPeriodic(1000, id -> {
+            long timeId = vertx.setPeriodic(3000, id -> {
                 String msg = "data: {\"testing\": true, \"sse_dev\": \"It's great\", \"now\": " + System.currentTimeMillis() + "}\n\n";
                 if(ctx.failed()){
-                    System.out.println("Failed to send message:");
+                    System.out.println("Failed to send message!!");
                 } else {
                     response.write(msg);
                 }
