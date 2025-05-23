@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>SSE with Vert.x</title>
-    <style>
-        body {font-family: Arial, Helvetica, sans-serif; margin: 20px;}
-        .event {
-            background: #f0f0f0;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-        }
-    </style>
+<!--    <style>-->
+<!--        body {font-family: Arial, Helvetica, sans-serif; margin: 20px;}-->
+<!--        .event {-->
+<!--            background: #f0f0f0;-->
+<!--            padding: 10px;-->
+<!--            margin-bottom: 10px;-->
+<!--            border-radius: 5px;-->
+<!--        }-->
+<!--    </style>-->
 </head>
 <body>
 <h2>Vert.x SSE Demo</h2>
 <div id="sse-container"></div>
 
 <script>
-    const eventSource = new EventSource('/sse');
+    const eventSource = new EventSource('/sse.dev');
     eventSource.onmessage  = function (event) {
         const div = document.createElement("div");
         div.className = "event";
