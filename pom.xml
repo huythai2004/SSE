@@ -30,6 +30,12 @@
             <artifactId>vertx-web</artifactId>
             <version>${vertx.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-web-client</artifactId>
+            <version>${vertx.version}</version>
+        </dependency>
 <!--        <dependency>-->
 <!--            <groupId>mysql</groupId>-->
 <!--            <artifactId>mysql-connector-java</artifactId>-->
